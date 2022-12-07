@@ -1,6 +1,6 @@
 package days
 
-var Days = map[string]interface{}{
+var Days = map[string]func() string{
 	"day1":   Day1,
 	"day1_2": Day1_2,
 	"day2":   Day2,

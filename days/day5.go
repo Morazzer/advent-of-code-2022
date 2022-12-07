@@ -3,7 +3,6 @@ package days
 import (
 	"bufio"
 	_ "embed"
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -11,7 +10,7 @@ import (
 //go:embed inputs/day5.txt
 var input5 string
 
-func Day5() {
+func Day5() string {
 	input := input5
 
 	var finishedInit = false
@@ -67,18 +66,20 @@ func Day5() {
 		}
 	}
 
-	fmt.Printf("Solution: ")
+	s := ""
 	for i := 1; i < 10; i++ {
 		v := stacks[i]
 		if len(v) > 0 {
-			fmt.Printf("%c", v[len(v)-1])
+			s += string(v[len(v)-1])
 		} else {
-			fmt.Printf(" ")
+			s += " "
 		}
 	}
+
+	return s
 }
 
-func Day5_2() {
+func Day5_2() string {
 	input := input5
 
 	var finishedInit = false
@@ -130,13 +131,15 @@ func Day5_2() {
 		stacks[to] = append(stacks[to], items...)
 	}
 
-	fmt.Printf("Solution: ")
+	s := ""
 	for i := 1; i < 10; i++ {
 		v := stacks[i]
 		if len(v) > 0 {
-			fmt.Printf("%c", v[len(v)-1])
+			s += string(v[len(v)-1])
 		} else {
-			fmt.Printf(" ")
+			s += " "
 		}
 	}
+
+	return s
 }

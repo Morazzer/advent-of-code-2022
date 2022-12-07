@@ -3,7 +3,6 @@ package days
 import (
 	"bufio"
 	_ "embed"
-	"fmt"
 	"math"
 	"strconv"
 	"strings"
@@ -12,7 +11,7 @@ import (
 //go:embed inputs/day7.txt
 var input7 string
 
-func Day7() {
+func Day7() string {
 	input := input7
 
 	fs := make(map[string][]File)
@@ -65,8 +64,7 @@ func Day7() {
 			overAll += count
 		}
 	}
-	fmt.Println(getSize(fs, "/"))
-	fmt.Printf("Solution: %d", overAll)
+	return strconv.Itoa(overAll)
 }
 
 func getSize(list map[string][]File, path string) int {
@@ -82,7 +80,7 @@ func getSize(list map[string][]File, path string) int {
 	return count
 }
 
-func Day7_2() {
+func Day7_2() string {
 	input := input7
 
 	fs := make(map[string][]File)
@@ -138,7 +136,7 @@ func Day7_2() {
 			smallest = int(math.Min(float64(smallest), float64(size)))
 		}
 	}
-	fmt.Printf("Solution: %d", smallest)
+	return strconv.Itoa(smallest)
 }
 
 type StringPair struct {

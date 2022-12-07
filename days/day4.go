@@ -3,7 +3,6 @@ package days
 import (
 	"bufio"
 	_ "embed"
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -11,7 +10,7 @@ import (
 //go:embed inputs/day4.txt
 var input4 string
 
-func Day4() {
+func Day4() string {
 	input := input4
 
 	count := 0
@@ -36,10 +35,10 @@ func Day4() {
 
 	}
 
-	fmt.Printf("Solution: %d", count)
+	return strconv.Itoa(count)
 }
 
-func Day4_2() {
+func Day4_2() string {
 	input := input4
 
 	count := 0
@@ -66,7 +65,7 @@ func Day4_2() {
 		}
 	}
 
-	fmt.Printf("Solution: %d", count)
+	return strconv.Itoa(count)
 }
 
 func contains(first, second []int) bool {

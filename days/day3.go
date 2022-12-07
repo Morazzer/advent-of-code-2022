@@ -3,14 +3,14 @@ package days
 import (
 	"bufio"
 	_ "embed"
-	"fmt"
+	"strconv"
 	"strings"
 )
 
 //go:embed inputs/day3.txt
 var input3 string
 
-func Day3() {
+func Day3() string {
 	input := input3
 
 	var priority int
@@ -39,10 +39,10 @@ func Day3() {
 		}
 	}
 
-	fmt.Printf("Solution: %d", priority)
+	return strconv.Itoa(priority)
 }
 
-func Day3_2() {
+func Day3_2() string {
 	input := input3
 
 	var priority int
@@ -71,5 +71,5 @@ func Day3_2() {
 		}
 	}
 
-	fmt.Printf("Solution: %d", priority)
+	return strconv.Itoa(priority)
 }

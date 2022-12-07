@@ -3,14 +3,14 @@ package days
 import (
 	"bufio"
 	_ "embed"
-	"fmt"
+	"strconv"
 	"strings"
 )
 
 //go:embed inputs/day6.txt
 var input6 string
 
-func Day6() {
+func Day6() string {
 	input := input6
 	scannner := bufio.NewScanner(strings.NewReader(input))
 	for scannner.Scan() {
@@ -23,15 +23,15 @@ func Day6() {
 			i := len(recieved) - 1
 			if i >= 4 {
 				if recieved[i] != recieved[i-1] && recieved[i] != recieved[i-2] && recieved[i] != recieved[i-3] && recieved[i-1] != recieved[i-2] && recieved[i-1] != recieved[i-3] && recieved[i-2] != recieved[i-3] {
-					fmt.Printf("Solution: %d", i+1)
-					return
+					return strconv.Itoa(i + 1)
 				}
 			}
 		}
 	}
+	return "Not found"
 }
 
-func Day6_2() {
+func Day6_2() string {
 	input := input6
 	scannner := bufio.NewScanner(strings.NewReader(input))
 	for scannner.Scan() {
@@ -59,9 +59,10 @@ func Day6_2() {
 					}
 				}
 				if real {
-					fmt.Printf("Solution: %d\n", i+1)
+					return strconv.Itoa(i + 1)
 				}
 			}
 		}
 	}
+	return "Not found"
 }

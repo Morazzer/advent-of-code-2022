@@ -3,14 +3,14 @@ package days
 import (
 	"bufio"
 	_ "embed"
-	"fmt"
+	"strconv"
 	"strings"
 )
 
 //go:embed inputs/day2.txt
 var input2 string
 
-func Day2() {
+func Day2() string {
 	input := input2
 
 	var score uint64
@@ -44,11 +44,10 @@ func Day2() {
 		}
 	}
 
-	fmt.Printf("Final score: %d\n", score)
-
+	return strconv.FormatUint(score, 10)
 }
 
-func Day2_2() {
+func Day2_2() string {
 	input := input2
 
 	var score uint64
@@ -104,6 +103,5 @@ func Day2_2() {
 			score += 3
 		}
 	}
-
-	fmt.Printf("Final score: %d\n", score)
+	return strconv.FormatUint(score, 10)
 }
