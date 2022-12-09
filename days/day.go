@@ -17,4 +17,6 @@ var Days = map[string]func() string{
 	"day7_2": Day7_2,
 	"day8":   Day8,
 	"day8_2": Day8_2,
+	"day9":   Day9,
+	"day9_2": Day9_2,
 }
