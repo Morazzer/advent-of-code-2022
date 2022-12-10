@@ -27,11 +27,11 @@ func main() {
 			if p1 != nil {
 				p1s = p1()
 			}
+			fmt.Printf("Part 1: %s\n", p1s)
 			if p2 != nil {
 				p2s = p2()
 			}
 
-			fmt.Printf("Part 1: %s\n", p1s)
 			fmt.Printf("Part 2: %s\n", p2s)
 			fmt.Println()
 		}
